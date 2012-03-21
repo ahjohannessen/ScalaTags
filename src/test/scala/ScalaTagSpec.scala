@@ -102,9 +102,9 @@ class ScalaTagSpec extends FunSpec
 			}
 		}
 
-		describe("adding css class") {
+		describe("when adding single css class") {
 
-			it("it is not possible to add multiple classes separated by space") {
+			it("should not be possible to add multiple classes separated by space") {
 				intercept[IllegalArgumentException] {
 					tag addClass("red green blue")
 				}
@@ -112,6 +112,12 @@ class ScalaTagSpec extends FunSpec
 
 			it("should be possible to store json in css that contains spaces") {
 				tag.addClass("{ }")
+			}
+
+			it("should add the class") {
+				val css = "blah"
+				tag hasClass css should be (false)
+				tag addClass css hasClass css should be (true)
 			}
 
 		}

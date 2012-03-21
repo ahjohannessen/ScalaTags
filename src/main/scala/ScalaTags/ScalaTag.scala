@@ -94,6 +94,10 @@ class ScalaTag(divTag: String) {
 		this
 	}
 
+	def hasClass(className: String) = {
+		cssClasses contains className
+	}
+
 	private def isValidClassName(name: String) = {
 		(
 			(name.startsWith("{") && name.endsWith("}")) || !name.contains(' '),
