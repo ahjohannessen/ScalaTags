@@ -1,7 +1,7 @@
 package ScalaTags
 
-import collection.mutable.{HashMap, ListBuffer}
-import collection.immutable.HashSet
+import collection.mutable.{HashSet, HashMap, ListBuffer}
+
 
 class ScalaTag(divTag: String) {
 	validateTag(divTag)
@@ -43,12 +43,12 @@ class ScalaTag(divTag: String) {
 	}
 
 	def append(tags: ScalaTag*) = {
-		children.appendAll(tags)
+		children appendAll tags
 		this
 	}
 
 	def prepend(tag: ScalaTag*) = {
-		children.prependAll(tag)
+		children prependAll tag
 		this
 	}
 
@@ -62,11 +62,11 @@ class ScalaTag(divTag: String) {
 	}
 
 	def style(key: String) = {
-		customStyles.get(key)
+		customStyles get key
 	}
 
 	def hasStyle(key: String) = {
-		customStyles.contains(key)
+		customStyles contains key
 	}
 
 	def hide() = {
@@ -85,6 +85,20 @@ class ScalaTag(divTag: String) {
 
 	def text() = {
 		content
+	}
+
+	def addClass(className: String) = {
+		val (valid, msg) = isValidClassName(className)
+		require(valid, msg)
+		cssClasses add className
+		this
+	}
+
+	private def isValidClassName(name: String) = {
+		(
+			(name.startsWith("{") && name.endsWith("}")) || !name.contains(' '),
+			"CSS class names cannot contain spaces. Problem class was %s" format name
+		)
 	}
 
 	private def validateTag(divTag: String) {
