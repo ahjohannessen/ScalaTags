@@ -1,18 +1,22 @@
 package ScalaTags
 
-import collection.mutable.{HashSet, HashMap, ListBuffer}
-
+import collection.mutable._
 
 class ScalaTag(divTag: String) {
 	validateTag(divTag)
 
 	private val children = ListBuffer[ScalaTag]()
-	private var tag: String = divTag.toLowerCase
-	private var doRender: Boolean = true;
-
-	private var content = ""
 	private val cssClasses = new HashSet[String]()
 	private val customStyles = new HashMap[String, String]()
+	private val htmlAttributes = new HashMap[String, Any]()
+	
+	private var tag: String = divTag.toLowerCase
+	private var doRender: Boolean = true;
+	private var content = ""
+
+	val cssClassAttribute = "class"
+	val cssStyleAttribute = "style"
+	val dataPrefix = "data-"
 
 	def this(divTag: String, action: ScalaTag => Unit) = {
 		this(divTag)
@@ -94,8 +98,44 @@ class ScalaTag(divTag: String) {
 		this
 	}
 
+	def removeClass(className: String) = {
+		cssClasses remove className
+		this
+	}
+
 	def hasClass(className: String) = {
 		cssClasses contains className
+	}
+
+	def addClasses(classes: scala.Iterable[String]) = {
+		classes foreach addClass
+		this
+	}
+	def attr(attribute: String) = {
+		(htmlAttributes get attribute) getOrElse ""
+	}
+
+	def attr(attribute: String, value: Any) = {
+
+		(shouldRemoveAttr(value), isCssClassAttr(attribute)) match {
+			case (true, false) => removeAttr(attribute)
+			case (false, true) => addClasses(value.toString.split(' '))
+			case (false, false) => htmlAttributes(attribute) = value.toString
+		}
+		this
+	}
+
+	def removeAttr(attribute: String) = {
+		htmlAttributes remove attribute
+		this
+	}
+
+	private def shouldRemoveAttr(value: Any) = {
+		value == null || value == ""
+	}
+
+	private def isCssClassAttr(attribute: String) = {
+		attribute equalsIgnoreCase cssClassAttribute
 	}
 
 	private def isValidClassName(name: String) = {

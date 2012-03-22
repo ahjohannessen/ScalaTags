@@ -2,9 +2,8 @@ import ScalaTags.ScalaTag
 import org.scalatest._
 import matchers.ShouldMatchers
 
-class ScalaTagSpec extends FunSpec
-	with BeforeAndAfter
-	with ShouldMatchers {
+class ScalaTagSpec extends FunSpec with BeforeAndAfter
+																	 with ShouldMatchers {
 
 	var tag: ScalaTag = _;
 
@@ -71,7 +70,7 @@ class ScalaTagSpec extends FunSpec
 		}
 
 		it("should provide a way for callback") {
-			tag.modify(x => x.render(false)).render should be (false)
+			tag.modify(x => x.render(false)).render should be(false)
 		}
 
 		describe("style") {
@@ -87,18 +86,18 @@ class ScalaTagSpec extends FunSpec
 			}
 
 			it("should be able to hide") {
-				tag.hide().style("display") should be (Some("none"))
+				tag.hide().style("display") should be(Some("none"))
 			}
 		}
 
 		describe("text") {
 
 			it("should be empty by default") {
-				tag.text should be ("")
+				tag.text should be("")
 			}
 
 			it("should be stored") {
-				tag.text("scala").text should be ("scala")
+				tag.text("scala").text should be("scala")
 			}
 		}
 
@@ -106,7 +105,7 @@ class ScalaTagSpec extends FunSpec
 
 			it("should not be possible to add multiple classes separated by space") {
 				intercept[IllegalArgumentException] {
-					tag addClass("red green blue")
+					tag addClass ("red green blue")
 				}
 			}
 
@@ -116,8 +115,67 @@ class ScalaTagSpec extends FunSpec
 
 			it("should add the class") {
 				val css = "blah"
-				tag hasClass css should be (false)
-				tag addClass css hasClass css should be (true)
+				tag hasClass css should be(false)
+				tag addClass css hasClass css should be(true)
+			}
+		}
+
+		describe("when adding multiple css classes") {
+
+			it("should add all") {
+				val classes = List("a", "b", "c")
+				tag addClasses(classes)
+
+				classes foreach(tag hasClass _ should be (true))
+			}
+		}
+
+		describe("when adding an attribute") {
+
+			it("should add it as string") {
+				tag attr("a", 3.14) attr "a" should be ("3.14")
+			}
+
+			it("should remove attribute when value is null") {
+				tag attr("a", "v") attr "a" should be ("v")
+				tag attr("a", null) attr "a" should be ("")
+			}
+
+			it("should remove attribute when value is empty string") {
+				tag attr("a", "v") attr "a" should be ("v")
+				tag attr("a", "") attr "a" should be ("")
+			}
+
+			it("should add css when class attribute") {
+				tag attr("class", "a") hasClass "a" should be (true)
+			}
+
+			it("should add multiple css when space separated class attribute") {
+				tag attr("class", "x z")
+				tag hasClass "x" should be (true)
+				tag hasClass "z" should be (true)
+			}
+		}
+
+		describe("when adding multiple classes") {
+
+			it("should add all") {
+				val classes = List("a", "b", "c")
+				tag addClasses (classes)
+
+				classes foreach (tag hasClass _ should be(true))
+			}
+
+			describe("when removing a class") {
+
+				it("should remove the class") {
+					val css = "monty"
+					tag addClass css removeClass css hasClass css should be(false)
+				}
+
+				it("should happily do nothing if class does not exist") {
+					tag removeClass "scalatag"
+				}
 			}
 
 		}
