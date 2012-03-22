@@ -1,6 +1,0 @@
-package ScalaTags
-
-class Cache {
-
-
-}
