@@ -111,6 +111,7 @@ class ScalaTag(divTag: String) {
 		classes foreach addClass
 		this
 	}
+
 	def attr(attribute: String) = {
 		(htmlAttributes get attribute) getOrElse ""
 	}
@@ -126,7 +127,19 @@ class ScalaTag(divTag: String) {
 	}
 
 	def removeAttr(attribute: String) = {
-		htmlAttributes remove attribute
+		
+		if(isCssClassAttr(attribute)) {
+
+			cssClasses clear()
+
+		} else if (isCssStyleAttr(attribute)) {
+
+			customStyles clear()
+
+		} else {
+
+			htmlAttributes remove attribute
+		}
 		this
 	}
 
@@ -136,6 +149,10 @@ class ScalaTag(divTag: String) {
 
 	private def isCssClassAttr(attribute: String) = {
 		attribute equalsIgnoreCase cssClassAttribute
+	}
+
+	private def isCssStyleAttr(attribute: String) = {
+		attribute equalsIgnoreCase cssStyleAttribute
 	}
 
 	private def isValidClassName(name: String) = {

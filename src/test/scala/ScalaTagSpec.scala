@@ -157,6 +157,37 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 			}
 		}
 
+		describe("when removing an attribute") {
+
+			it("should reset css classes if css attribute") {
+
+				val classes = List("a", "b", "c")
+				tag addClasses classes
+				tag removeAttr "class"
+
+				classes foreach (tag hasClass _ should be (false))
+			}
+
+			it("should reset css styles if style attribute") {
+
+				val styles = List("color:#FFFFFF;", "width:100px;")
+				tag addClasses styles
+				tag removeAttr "style"
+
+				styles foreach (tag hasStyle _ should be (false))
+			}
+
+			it("should only remove attribute when html attribute") {
+
+				tag attr("href", "www.scala-lang.org")
+				tag attr("title", "scala is fun")
+				tag removeAttr "title"
+
+				tag attr "title" should be ("")
+				tag attr "href" should be ("www.scala-lang.org")
+			}
+		}
+
 		describe("when adding multiple classes") {
 
 			it("should add all") {

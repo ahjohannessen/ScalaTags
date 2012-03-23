@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="625a2b19-67e0-4064-aaec-4e6a8eda8ef3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/ScalaTags/Cache.scala" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ScalaTags.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,13 +71,13 @@
     <favorites_list name="ScalaTags" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.55432373">
+    <splitter split-orientation="horizontal" split-proportion="0.44100943">
       <split-first>
         <leaf>
-          <file leaf-file-name="ScalaTag.scala" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="ScalaTag.scala" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="89" column="37" selection-start="1466" selection-end="1466" vertical-scroll-proportion="0.027027028">
+                <state line="139" column="28" selection-start="2437" selection-end="2437" vertical-scroll-proportion="3.7567568">
                   <folding />
                 </state>
               </provider>
@@ -87,10 +87,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="ScalaTagSpec.scala" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="ScalaTagSpec.scala" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="118" column="54" selection-start="2919" selection-end="2919" vertical-scroll-proportion="0.027565084">
+                <state line="187" column="7" selection-start="4626" selection-end="4626" vertical-scroll-proportion="0.8648649">
                   <folding />
                 </state>
               </provider>
@@ -122,8 +122,8 @@
         <option value="$PROJECT_DIR$/src/main/scala/HelloWorld.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/ScalaTagsSpec.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/ScalaTags/Cache.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala" />
       </list>
     </option>
   </component>
@@ -667,7 +667,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1633" height="1028" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955262" sideWeight="0.6710671" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -684,7 +684,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955262" sideWeight="0.6710671" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993691" sideWeight="0.750275" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14637224" sideWeight="0.76237625" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14637224" sideWeight="0.76237625" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972497" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -776,16 +776,16 @@
         <state line="1423" column="0" selection-start="53563" selection-end="53563" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="37" selection-start="1466" selection-end="1466" vertical-scroll-proportion="0.027027028">
+        <state line="187" column="7" selection-start="4626" selection-end="4626" vertical-scroll-proportion="0.8648649">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="54" selection-start="2919" selection-end="2919" vertical-scroll-proportion="0.027565084">
+        <state line="139" column="28" selection-start="2437" selection-end="2437" vertical-scroll-proportion="3.7567568">
           <folding />
         </state>
       </provider>
