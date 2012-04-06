@@ -15,6 +15,7 @@ class ScalaTag(divTag: String) {
 	private var tag: String = divTag.toLowerCase
 	private var doRender: Boolean = true;
 	private var content = ""
+	private var ignoreClosingTag = false
 
 	def this(divTag: String, action: ScalaTag => Unit) = {
 		this(divTag)
@@ -176,6 +177,28 @@ class ScalaTag(divTag: String) {
 			return value.asInstanceOf[Option[T]]
 		}
 		None
+	}
+
+	def title() = {
+		attr("title")
+	}
+	
+	def title(value: String) = {
+		attr("title", value)
+		this
+	}
+
+	def isInputElement = {
+		divTag == "input" || divTag == "select" || divTag == "textarea"
+	}
+
+	def noClosingTag = {
+		ignoreClosingTag = true
+		this
+	}
+
+	def hasClosingTag = {
+		!ignoreClosingTag
 	}
 
 	private def isCssClassAttr(attribute: String) = {

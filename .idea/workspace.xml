@@ -75,10 +75,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.50258684">
       <split-first>
         <leaf>
-          <file leaf-file-name="ScalaTag.scala" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="ScalaTag.scala" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="171" column="0" selection-start="3099" selection-end="3099" vertical-scroll-proportion="2.8723724">
+                <state line="201" column="3" selection-start="3625" selection-end="3625" vertical-scroll-proportion="0.8648649">
                   <folding />
                 </state>
               </provider>
@@ -88,10 +88,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="ScalaTagSpec.scala" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="ScalaTagSpec.scala" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="261" column="6" selection-start="6589" selection-end="6589" vertical-scroll-proportion="0.72434914">
+                <state line="296" column="4" selection-start="7352" selection-end="7352" vertical-scroll-proportion="0.8897397">
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -796,19 +796,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="0" selection-start="3099" selection-end="3099" vertical-scroll-proportion="2.8723724">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="261" column="6" selection-start="6589" selection-end="6589" vertical-scroll-proportion="0.72434914">
+        <state line="296" column="4" selection-start="7352" selection-end="7352" vertical-scroll-proportion="0.8897397">
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="201" column="3" selection-start="3625" selection-end="3625" vertical-scroll-proportion="0.8648649">
+          <folding />
         </state>
       </provider>
     </entry>

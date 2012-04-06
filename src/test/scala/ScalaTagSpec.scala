@@ -268,6 +268,34 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 			}
 		}
 
+		describe("title") {
+
+			it("should be stored") {
+				tag title "scala" title() should be ("scala")
+			}
+		}
+
+		describe("when being an input element") {
+
+			it("should return true when asked") {
+				"input,select,textarea".split(",") foreach
+					(new ScalaTag(_).isInputElement should be (true))
+			}
+		}
+
+		describe("closing tag") {
+
+			it("should be on by default") {
+				tag.hasClosingTag should be (true)
+			}
+
+			it("should be possible to turn off") {
+				tag.noClosingTag.hasClosingTag should be (false)
+			}
+		}
+
+
+
 		describe("companion's empty method") {
 
 			it("should create a span tag") {
