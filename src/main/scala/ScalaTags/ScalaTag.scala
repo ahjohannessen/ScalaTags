@@ -1,6 +1,7 @@
 package ScalaTags
 
 import collection.mutable._
+import StringExtensions._
 
 class ScalaTag(divTag: String) {
 	validateTag(divTag)
@@ -9,14 +10,11 @@ class ScalaTag(divTag: String) {
 	private val cssClasses = new HashSet[String]()
 	private val customStyles = new HashMap[String, String]()
 	private val htmlAttributes = new HashMap[String, Any]()
+	private val metaData = new HashMap[String, Any]()
 	
 	private var tag: String = divTag.toLowerCase
 	private var doRender: Boolean = true;
 	private var content = ""
-
-	val cssClassAttribute = "class"
-	val cssStyleAttribute = "style"
-	val dataPrefix = "data-"
 
 	def this(divTag: String, action: ScalaTag => Unit) = {
 		this(divTag)
@@ -126,6 +124,10 @@ class ScalaTag(divTag: String) {
 		this
 	}
 
+	private def shouldRemoveAttr(value: Any) = {
+		value == null || value == ""
+	}
+
 	def removeAttr(attribute: String) = {
 		
 		if(isCssClassAttr(attribute)) {
@@ -136,6 +138,10 @@ class ScalaTag(divTag: String) {
 
 			customStyles clear()
 
+		} else if (isMetadataAttribute(attribute)) {
+
+			metaData clear()
+
 		} else {
 
 			htmlAttributes remove attribute
@@ -143,16 +149,37 @@ class ScalaTag(divTag: String) {
 		this
 	}
 
-	private def shouldRemoveAttr(value: Any) = {
-		value == null || value == ""
+	def hasAttr(attribute: String) : Boolean = {
+
+		if(isCssClassAttr(attribute)) return !cssClasses.isEmpty
+		if(isCssStyleAttr(attribute)) return !customStyles.isEmpty
+		if(isMetadataAttribute(attribute)) return !metaData.isEmpty
+		htmlAttributes contains attribute
+	}
+
+	def hasMetadata(key: String) = {
+		metaData contains key
+	}
+
+	def metadata(key: String, value: Any) = {
+		metaData(key) = value
+		this
+	}
+	
+	def metadata(key: String) : Option[Any] = {
+		metaData get key
 	}
 
 	private def isCssClassAttr(attribute: String) = {
-		attribute equalsIgnoreCase cssClassAttribute
+		attribute equalsIgnoreCase ScalaTag.cssClassAttribute
 	}
 
 	private def isCssStyleAttr(attribute: String) = {
-		attribute equalsIgnoreCase cssStyleAttribute
+		attribute equalsIgnoreCase ScalaTag.cssStyleAttribute
+	}
+
+	private def isMetadataAttribute(attribute: String) = {
+		attribute equalsIgnoreCase ScalaTag.metadataAttribute
 	}
 
 	private def isValidClassName(name: String) = {
@@ -163,11 +190,25 @@ class ScalaTag(divTag: String) {
 	}
 
 	private def validateTag(divTag: String) {
-		require(divTag != null && !divTag.isEmpty)
+		require(divTag.isNotNullOrEmpty)
 	}
 }
 
 object ScalaTag {
+
+	private val cssClassAttribute = "class"
+	private val cssStyleAttribute = "style"
+	private val dataPrefix = "data-"
+	private var metadataSuffix = ":"
+
+	def useMetadataSuffix(suffix: String) {
+		require(suffix.isNotNullOrEmpty)
+		metadataSuffix = suffix
+	}
+
+	def metadataAttribute() = {
+		dataPrefix + metadataSuffix
+	}
 
 	def withParent(divTag: String, parent: ScalaTag): ScalaTag = {
 		new ScalaTag(divTag, t => if (parent != null) parent.append(t))

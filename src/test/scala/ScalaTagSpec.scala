@@ -170,11 +170,11 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 
 			it("should reset css styles if style attribute") {
 
-				val styles = List("color:#FFFFFF;", "width:100px;")
-				tag addClasses styles
+				tag style("color", "#FFFFFF") style("width", "100px")
 				tag removeAttr "style"
 
-				styles foreach (tag hasStyle _ should be (false))
+				tag hasStyle "color" should be (false)
+				tag hasStyle "width" should be (false)
 			}
 
 			it("should only remove attribute when html attribute") {
@@ -188,6 +188,41 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 			}
 		}
 
+		describe("when checking attribute membership") {
+
+			it("should return true when has css class attribute") {
+				tag addClass "a" hasAttr "class" should be (true)
+			}
+
+			it("should return false when no css class attribute") {
+				tag style("color", "#FFFFFF") hasAttr "class" should be (false)
+			}
+
+			it("should return true when has style attribute") {
+				tag style("color", "#FFFFFF") hasAttr "style" should be (true)
+			}
+
+			it("should return false when no style attribute") {
+				tag addClass "b" hasAttr "style" should be (false)
+			}
+
+			it("should return true when has metadata attribute") {
+				tag metadata ("title", "scala") hasAttr ScalaTag.metadataAttribute should be (true)
+			}
+
+			it("should return false when no metadata attribute") {
+				tag style("color", "#FFFFFF") hasAttr ScalaTag.metadataAttribute should be (false)
+			}
+
+			it("should return true when has html attribute") {
+				tag attr ("title", "scala") hasAttr "title" should be (true)
+			}			
+			
+			it("should return false when no html attribute") {
+				tag style("color", "#FFFFFF") hasAttr "color" should be (false)
+			}
+		}
+
 		describe("when adding multiple classes") {
 
 			it("should add all") {
@@ -196,17 +231,31 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 
 				classes foreach (tag hasClass _ should be(true))
 			}
+		}
 
-			describe("when removing a class") {
+		describe("when removing a class") {
 
-				it("should remove the class") {
-					val css = "monty"
-					tag addClass css removeClass css hasClass css should be(false)
-				}
+			it("should remove the class") {
+				val css = "monty"
+				tag addClass css removeClass css hasClass css should be(false)
+			}
 
-				it("should happily do nothing if class does not exist") {
-					tag removeClass "scalatag"
-				}
+			it("should happily do nothing if class does not exist") {
+				tag removeClass "scalatag"
+			}
+		}
+
+		describe("metadata") {
+
+			it("should be stored") {
+				tag metadata("test", 42) 
+				tag hasMetadata "test" should be (true)
+				tag metadata "test" should be (Some(42))
+			}
+
+			it("should return none/false when no key") {
+				tag metadata "1" should be (None)
+				tag hasMetadata "1" should be (false)
 			}
 
 		}
