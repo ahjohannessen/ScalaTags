@@ -248,7 +248,7 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 		describe("metadata") {
 
 			it("should be stored") {
-				tag metadata("test", 42) 
+				tag metadata("test", 42)
 				tag hasMetadata "test" should be (true)
 				tag metadata "test" should be (Some(42))
 			}
@@ -258,6 +258,14 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 				tag hasMetadata "1" should be (false)
 			}
 
+			it("should be able to return typed data"){
+				tag metadata("person", Person("ahj", 34))
+				tag.metadataTyped[Person]("person") should be (Some(Person("ahj", 34)))
+			}
+
+			it("should return none when no typed data"){
+				tag.metadataTyped[Person]("person") should be (None)
+			}
 		}
 
 		describe("companion's empty method") {
@@ -296,3 +304,5 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 		}
 	}
 }
+
+case class Person(var name: String, var age: Int) {}

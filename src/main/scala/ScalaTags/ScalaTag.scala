@@ -170,6 +170,14 @@ class ScalaTag(divTag: String) {
 		metaData get key
 	}
 
+	def metadataTyped[T](key: String) : Option[T] = {
+		val value = metadata(key)
+		if(value.isDefined && value.get.isInstanceOf[T]) {
+			return value.asInstanceOf[Option[T]]
+		}
+		None
+	}
+
 	private def isCssClassAttr(attribute: String) = {
 		attribute equalsIgnoreCase ScalaTag.cssClassAttribute
 	}
