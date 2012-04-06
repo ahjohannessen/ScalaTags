@@ -14,6 +14,8 @@ class ScalaTag(divTag: String) {
 	
 	private var tag: String = divTag.toLowerCase
 	private var doRender: Boolean = true;
+	private var isAuthorized: Boolean = true;
+
 	private var content = ""
 	private var ignoreClosingTag = false
 
@@ -41,6 +43,15 @@ class ScalaTag(divTag: String) {
 		this
 	}
 
+	def authorized() = {
+		isAuthorized
+	}
+
+	def authorized(isAuthorized: Boolean) = {
+		this.isAuthorized = isAuthorized
+		this
+	}
+
 	def allChildren() = {
 		children.toIterable
 	}
@@ -57,6 +68,17 @@ class ScalaTag(divTag: String) {
 
 	def firstChild(): ScalaTag = {
 		children.head
+	}
+
+	def wrapWith(wrapper: ScalaTag) : ScalaTag = {
+		wrapper.prepend(this)
+	}
+
+	def wrapWith(tag: String) : ScalaTag = {
+		val wrapper = new ScalaTag(tag)
+		wrapper render(render())
+		wrapper authorized(authorized())
+		wrapWith(wrapper)
 	}
 
 	def style(key: String, value: String) = {

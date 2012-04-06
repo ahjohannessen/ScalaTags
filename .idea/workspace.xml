@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="625a2b19-67e0-4064-aaec-4e6a8eda8ef3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala" afterPath="$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala" />
     </list>
@@ -75,10 +76,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.50258684">
       <split-first>
         <leaf>
-          <file leaf-file-name="ScalaTag.scala" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="ScalaTag.scala" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="201" column="3" selection-start="3625" selection-end="3625" vertical-scroll-proportion="0.8648649">
+                <state line="80" column="35" selection-start="1511" selection-end="1511" vertical-scroll-proportion="0.45945945">
                   <folding />
                 </state>
               </provider>
@@ -88,10 +89,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="ScalaTagSpec.scala" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="ScalaTagSpec.scala" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="296" column="4" selection-start="7352" selection-end="7352" vertical-scroll-proportion="0.8897397">
+                <state line="372" column="49" selection-start="9122" selection-end="9122" vertical-scroll-proportion="0.8346095">
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -796,19 +797,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="4" selection-start="7352" selection-end="7352" vertical-scroll-proportion="0.8897397">
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state line="80" column="35" selection-start="1511" selection-end="1511" vertical-scroll-proportion="0.45945945">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="3" selection-start="3625" selection-end="3625" vertical-scroll-proportion="0.8648649">
-          <folding />
+        <state line="372" column="49" selection-start="9122" selection-end="9122" vertical-scroll-proportion="0.8346095">
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

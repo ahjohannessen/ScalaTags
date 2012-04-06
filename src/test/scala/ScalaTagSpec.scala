@@ -294,7 +294,44 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 			}
 		}
 
+		describe("authorization") {
 
+			it("should be authorized by default"){
+				tag authorized() should be (true)
+			}
+
+			it("should be possible to turn off authorization"){
+				tag authorized(false)
+				tag authorized() should be (false)
+			}
+		}
+
+		describe("when wrapping with scala tag instance") {
+
+			it("it should add the inner tag as first child of wrapper") {
+				val wrapper = new ScalaTag("div")
+				tag wrapWith wrapper firstChild() should be (tag)
+			}
+
+		}
+
+		describe("when wrapping with scala tag string") {
+
+			it("should add the inner tag as first child of wrapper") {
+				tag.wrapWith("h1") firstChild() should be (tag)
+			}
+
+			it("should copy visibility from the inner tag") {
+				tag.render(false)
+				tag.wrapWith("h1") render() should be (false)
+			}
+
+			it("should copy authorization from the inner tag") {
+				tag.authorized(false)
+				tag.wrapWith("h1") authorized() should be (false)
+			}
+
+		}
 
 		describe("companion's empty method") {
 
@@ -333,4 +370,4 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 	}
 }
 
-case class Person(var name: String, var age: Int) {}
+case class Person(var name: String, var age: Int)
