@@ -67,6 +67,17 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 
 				tag.allChildren should contain(child)
 			}
+
+			it("should be possible to replace children") {
+				val newChild1 = new ScalaTag("new1")
+				val newChild2 = new ScalaTag("new2")
+				tag.append(new ScalaTag("old1"), new ScalaTag("old2"))
+
+				tag.replaceChildren(newChild1, newChild2)
+
+				tag allChildren() should contain(newChild1)
+				tag allChildren() should contain(newChild2)
+			}
 		}
 
 		it("should provide a way for callback") {
@@ -303,6 +314,17 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 			it("should be possible to turn off authorization"){
 				tag authorized(false)
 				tag authorized() should be (false)
+			}
+		}
+
+		describe("encoding inner text") {
+
+			it("should encode by default") {
+				tag encoded() should be (true)
+			}
+
+			it("should be possible to turn off encoding") {
+				tag encoded(false) encoded() should be (false)
 			}
 		}
 

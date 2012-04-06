@@ -13,10 +13,11 @@ class ScalaTag(divTag: String) {
 	private val metaData = new HashMap[String, Any]()
 	
 	private var tag: String = divTag.toLowerCase
-	private var doRender: Boolean = true;
-	private var isAuthorized: Boolean = true;
-
 	private var content = ""
+
+	private var encodeInnerText = true
+	private var doRender: Boolean = true
+	private var isAuthorized: Boolean = true
 	private var ignoreClosingTag = false
 
 	def this(divTag: String, action: ScalaTag => Unit) = {
@@ -43,6 +44,15 @@ class ScalaTag(divTag: String) {
 		this
 	}
 
+	def encoded() = {
+		encodeInnerText
+	}
+
+	def encoded(encodeInnerText: Boolean) = {
+		this.encodeInnerText = encodeInnerText
+		this
+	}
+
 	def authorized() = {
 		isAuthorized
 	}
@@ -50,6 +60,11 @@ class ScalaTag(divTag: String) {
 	def authorized(isAuthorized: Boolean) = {
 		this.isAuthorized = isAuthorized
 		this
+	}
+
+	def replaceChildren(tags: ScalaTag*) {
+		children clear()
+		children appendAll tags
 	}
 
 	def allChildren() = {
