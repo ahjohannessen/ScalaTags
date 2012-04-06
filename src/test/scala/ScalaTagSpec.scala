@@ -352,7 +352,18 @@ class ScalaTagSpec extends FunSpec with BeforeAndAfter
 				tag.authorized(false)
 				tag.wrapWith("h1") authorized() should be (false)
 			}
+		}
 
+		describe("when rendering") {
+
+			it("will be rendered if authorized and render are true") {
+				tag render(false)
+				tag willBeRendered() should be (false)
+				tag render(true)
+				tag willBeRendered() should be (true)
+				tag authorized(false)
+				tag willBeRendered() should be (false)
+			}
 		}
 
 		describe("companion's empty method") {

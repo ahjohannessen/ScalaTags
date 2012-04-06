@@ -75,10 +75,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.50258684">
       <split-first>
         <leaf>
-          <file leaf-file-name="ScalaTag.scala" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="ScalaTag.scala" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="70" column="12" selection-start="1329" selection-end="1329" vertical-scroll-proportion="0.8108108">
+                <state line="47" column="28" selection-start="994" selection-end="994" vertical-scroll-proportion="0.1891892">
                   <folding />
                 </state>
               </provider>
@@ -88,10 +88,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="ScalaTagSpec.scala" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="ScalaTagSpec.scala" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="73" column="8" selection-start="1910" selection-end="1910" vertical-scroll-proportion="0.7794793">
+                <state line="364" column="46" selection-start="9129" selection-end="9129" vertical-scroll-proportion="0.77182233">
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -676,14 +676,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1633" height="1028" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955262" sideWeight="0.6710671" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24952741" sideWeight="0.6710671" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23762377" sideWeight="0.4952741" order="7" side_tool="false" content_ui="tabs" x="24" y="312" width="1585" height="448" />
+      <window_info id="SBT Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23762377" sideWeight="0.4952741" order="7" side_tool="false" content_ui="tabs" x="24" y="312" width="1585" height="448" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.50031507" order="7" side_tool="true" content_ui="tabs" />
@@ -796,19 +796,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="8" selection-start="1910" selection-end="1910" vertical-scroll-proportion="0.7794793">
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state line="47" column="28" selection-start="994" selection-end="994" vertical-scroll-proportion="0.1891892">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ScalaTags/ScalaTag.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ScalaTagSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="12" selection-start="1329" selection-end="1329" vertical-scroll-proportion="0.8108108">
-          <folding />
+        <state line="364" column="46" selection-start="9129" selection-end="9129" vertical-scroll-proportion="0.77182233">
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

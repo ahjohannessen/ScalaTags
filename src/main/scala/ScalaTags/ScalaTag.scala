@@ -43,6 +43,10 @@ class ScalaTag(divTag: String) {
 		doRender = shouldRender
 		this
 	}
+	
+	def willBeRendered() = {
+		render() && authorized()
+	}
 
 	def encoded() = {
 		encodeInnerText
